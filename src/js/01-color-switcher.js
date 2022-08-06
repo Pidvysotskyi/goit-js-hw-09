@@ -11,20 +11,18 @@ const stopButtonRef = document.querySelector('button[data-stop]');
 startButtonRef.addEventListener('click', onStartButtonClick);
 stopButtonRef.addEventListener('click', onStopButtonClick);
 
-let isButtonDisable = false;
+startButtonRef.disabled = false;
 
 function onStartButtonClick() {
-  if (!isButtonDisable) {
-    timerID = setInterval(() => {
-      backColor = getRandomHexColor();
-      bodyRef.style.backgroundColor = backColor;
-      console.log(`I changed background collor for Body to ${backColor}`);
-      isButtonDisable = true;
-    }, 1000);
-  }
+  timerID = setInterval(() => {
+    backColor = getRandomHexColor();
+    bodyRef.style.backgroundColor = backColor;
+    console.log(`I changed background collor for Body to ${backColor}`);
+    startButtonRef.disabled = true;
+  }, 1000);
 }
 
 function onStopButtonClick() {
   clearInterval(timerID);
-  isButtonDisable = false;
+  startButtonRef.disabled = false;
 }
