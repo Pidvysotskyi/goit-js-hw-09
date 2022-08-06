@@ -11,8 +11,6 @@ const stopButtonRef = document.querySelector('button[data-stop]');
 startButtonRef.addEventListener('click', onStartButtonClick);
 stopButtonRef.addEventListener('click', onStopButtonClick);
 
-startButtonRef.disabled = false;
-
 function onStartButtonClick() {
   timerID = setInterval(() => {
     backColor = getRandomHexColor();
