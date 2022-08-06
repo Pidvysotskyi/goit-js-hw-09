@@ -15,7 +15,6 @@ function onStartButtonClick() {
   timerID = setInterval(() => {
     backColor = getRandomHexColor();
     bodyRef.style.backgroundColor = backColor;
-    console.log(`I changed background collor for Body to ${backColor}`);
     startButtonRef.disabled = true;
   }, 1000);
 }
