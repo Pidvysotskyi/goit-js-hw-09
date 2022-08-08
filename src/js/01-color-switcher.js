@@ -14,10 +14,10 @@ stopButtonRef.addEventListener('click', onStopButtonClick);
 let timerID = null;
 
 function onStartButtonClick() {
+  startButtonRef.disabled = true;
   timerID = setInterval(() => {
     const backColor = getRandomHexColor();
     bodyRef.style.backgroundColor = backColor;
-    startButtonRef.disabled = true;
   }, 1000);
 }
 
